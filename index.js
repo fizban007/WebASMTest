@@ -248,19 +248,19 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ "./index.js":
-/*!******************!*\
-  !*** ./index.js ***!
-  \******************/
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const js = __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ./node_modules/hello-wasm/hello_wasm.js */ \"../pkg/hello_wasm.js\"));\njs.then(js => {\n  js.greet(\"WebAssembly\");\n});\n\n\n//# sourceURL=webpack:///./index.js?");
+eval("const js = __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.bind(null, /*! ../node_modules/hello-wasm/hello_wasm.js */ \"../pkg/hello_wasm.js\"));\njs.then(js => {\n  js.greet(\"WebAssembly\");\n});\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 

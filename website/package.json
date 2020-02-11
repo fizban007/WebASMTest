@@ -5,7 +5,9 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "hello-wasm": "file:../pkg"
+    "dat.gui": "^0.7.6",
+    "hello-wasm": "file:../pkg",
+    "three": "^0.113.2"
   },
   "devDependencies": {
     "gh-pages": "^2.2.0",

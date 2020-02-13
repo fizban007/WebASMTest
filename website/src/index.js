@@ -94,14 +94,15 @@ js.then(js => {
   // js.test_dict(conf, conf.px);
   function integrate_line(p0, dl, nmax, color1, color2) {
     // var positions = new Float32Array(nmax*3);
+    var skip = 5;
     var positions = js.integrate_field_line(
       [p0.x, p0.y, p0.z],
       [conf.px, conf.py, conf.pz, conf.q11, conf.q12, conf.q13,
        conf.q22, conf.q23, conf.q_offset_x, conf.q_offset_y,
-       conf.q_offset_z, conf.LC], dl, nmax);
+       conf.q_offset_z, conf.LC], dl, nmax, skip);
       // positions);
     var l = positions.length;
-    if (l * dl / 3.0 >= conf.min_length / 10.0) {
+    if (l * dl / 3.0 >= conf.min_length / skip) {
       var xlast = positions[l-3];
       var ylast = positions[l-2];
       var open = (xlast*xlast + ylast*ylast > conf.LC*conf.LC ? true : false);

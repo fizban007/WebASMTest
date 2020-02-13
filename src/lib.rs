@@ -127,6 +127,7 @@ pub fn integrate_field_line(
   params: &[f32],
   dl: f32,
   nmax: u32,
+  skip: i32,
   // pos_array: &mut [f32],
 ) -> Vec<f32> {
   let conf = Conf::new(params);
@@ -164,7 +165,7 @@ pub fn integrate_field_line(
       pos.extend_from_slice(&[p.x, p.y, p.z]);
       break;
     }
-    if (i % 10 == 0) {
+    if ((i % skip as u32) == 0) {
       pos.extend_from_slice(&[p.x, p.y, p.z]);
     }
     // pos_array[(i * 3) as usize] = p.x;

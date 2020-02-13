@@ -106,6 +106,9 @@ js.then(js => {
       var xlast = positions[l-3];
       var ylast = positions[l-2];
       var open = (xlast*xlast + ylast*ylast > conf.LC*conf.LC ? true : false);
+      if (!open) {
+        if (Math.random() < 0.5) return;
+      }
       var g = new LineGeometry();
 
       // g.setPositions(positions.slice(0,num));

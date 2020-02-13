@@ -42,16 +42,16 @@ var mesh = new THREE.Mesh(geometry, material);
 scene.add(mesh);
 
 var Config = function () {
-  this.p0 = 0.5;
+  this.p0 = 1.0;
   this.theta = 80.0;
   this.px = 0.0;
   this.py = this.p0 * Math.sin(this.theta*Math.PI/180.0);
   this.pz = this.p0 * Math.cos(this.theta*Math.PI/180.0);
-  this.q11 = 0.35;
+  this.q11 = 0.6;
   this.q12 = 0.0;
   this.q13 = 0.0;
-  this.q22 = -0.43;
-  this.q23 = -0.81;
+  this.q22 = -0.8;
+  this.q23 = -2.0;
   this.q_offset_x = 0.0;
   this.q_offset_y = 0.0;
   this.q_offset_z = -0.4;
@@ -203,7 +203,7 @@ js.then(js => {
     conf.p0 = Math.sqrt(conf.px * conf.px + conf.py * conf.py + conf.pz * conf.pz);
     conf.theta = Math.atan(conf.pz / conf.py);
   });
-  f_dipole.add(conf, "p0", 0.0, 1.0, 0.001).onChange(function() {
+  f_dipole.add(conf, "p0", 0.0, 2.0, 0.001).onChange(function() {
     conf.py = conf.p0 * Math.sin(conf.theta*Math.PI/180.0);
     conf.pz = conf.p0 * Math.cos(conf.theta*Math.PI/180.0);
     update_fieldlines();
